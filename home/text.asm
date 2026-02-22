@@ -104,11 +104,11 @@ PlaceNextChar::
 	dict '<TARGET>',  PlaceMoveTargetsName
 	dict '<USER>',    PlaceMoveUsersName
 	
-	cp "΄"
+	cp '΄'
 	jr z, .placeTonos
-	cp "¨"
+	cp '¨'
 	jr z, .placeAccent
-	cp "΅"
+	cp '΅'
 	jr nz, .placeChar
 .placeTonos
 	inc de
@@ -116,10 +116,10 @@ PlaceNextChar::
 	dec de
 	cp $c3 ; compare next character with uppercase omega
 	jr nc, .upperTonos
-	ld a, "<TONOS2>"
+	ld a, '<TONOS2>'
 	jr .placeAccent
 .upperTonos
-	ld a, "΄"
+	ld a, '΄'
 
 	
 .placeAccent
